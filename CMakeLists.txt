@@ -15,7 +15,7 @@ include(CheckFunctionExists)
 check_function_exists(strncpy_s HAVE_STRNCPY_S)
 
 # To build or not to build examples (removes GLFW dependency)
-option(HORDE3D_BUILD_EXAMPLES "Builds Horde3D examples" ON)
+option(HORDE3D_BUILD_EXAMPLES "Builds Horde3D examples" OFF)
 
 # Look for required GLFW library.
 if(HORDE3D_BUILD_EXAMPLES)
