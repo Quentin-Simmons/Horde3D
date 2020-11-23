@@ -14,27 +14,12 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Modules/" ${CMAKE_MODUL
 include(CheckFunctionExists)
 check_function_exists(strncpy_s HAVE_STRNCPY_S)
 
-
-
-
-
-
-
-
-
-
+#If building with clang on windows make sure that Win32 is set. 
 if(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
     if (WIN32)
-        #do something
-        message(" ++++++++ in extern Using Clang on Windows do stuff here *** ")
         add_definitions(-DWIN32)
     endif (WIN32)  
 endif()
-
-
-
-
-
 
 # To build or not to build examples (removes GLFW dependency)
 option(HORDE3D_BUILD_EXAMPLES "Builds Horde3D examples" ON)
