@@ -23,9 +23,7 @@ FIND_PATH(GLFW_INCLUDE_DIR glfw3.h
 	/opt
 )
 
-MESSAGE("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 MESSAGE("GLFW_INCLUDE_DIR is ${GLFW_INCLUDE_DIR}")
-MESSAGE("BOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
 
 FIND_LIBRARY(GLFW_LIBRARY_PATH
@@ -67,11 +65,11 @@ IF(NOT GLFW_LIBRARY_PATH OR HORDE3D_FORCE_DOWNLOAD_GLFW)
         ${install_dir}/src/project_glfw/include
     )
     
-    IF(MSVC)
-       SET(GLFW_LIBRARY_PATH ${install_dir}/lib/glfw3.lib )
-    ELSE(MSVC)
-       SET(GLFW_LIBRARY_PATH ${install_dir}/lib/libglfw3.a )
-    ENDIF(MSVC)
+    #IF(MSVC)
+    #   SET(GLFW_LIBRARY_PATH ${install_dir}/lib/glfw3.lib )
+    #ELSE(MSVC)
+    #   SET(GLFW_LIBRARY_PATH ${install_dir}/lib/libglfw3.a )
+    #ENDIF(MSVC)
 
     IF (WIN32)
         SET(GLFW_LIBRARY_PATH ${install_dir}/lib/glfw3.lib )

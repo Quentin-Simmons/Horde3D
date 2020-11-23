@@ -37,8 +37,10 @@ std::string extractResourcePath( char *fullPath )
 
 #ifdef WIN32
     const char delim = '\\';
+    std::cout<<"Win32 is defined here"<<std::endl;
 #else
     const char delim = '/';
+     std::cout<<"Win32 is NOT defined yet"<<std::endl;
 #endif
 
 #ifdef __APPLE__
@@ -54,7 +56,14 @@ std::string extractResourcePath( char *fullPath )
 		s = s.substr( 0, s.rfind( delim ) );
     
     // Add the 'Content' folder
-    return s + delim + ".." + delim + ".." + delim + "Content";
+    
+    //std::string content(s + delim + ".." + delim + ".." + delim + "Content");
+    std::string g("");
+    std::string content(g+".." + delim + ".." + delim + "Content");
+    std::cout << "Content folder is " <<content<< std::endl;
+    //return s + delim + ".." + delim + ".." + delim + "Content";
+    return content;
+
 }
 
 
